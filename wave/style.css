@@ -22,6 +22,12 @@ body {
   border-radius: 50%;
   background-color: var(--bl);
   cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.wave-box .wave-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(152, 211, 218, .5);
 }
 
 .wave-box .wave-btn::after,
@@ -50,4 +56,9 @@ body {
     scale: 1.2;
     opacity: 0;
   }
+}
+
+.wave-box .wave-btn:hover::before,
+.wave-box .wave-btn:hover::after {
+  transform: scale(1.15);
 }
