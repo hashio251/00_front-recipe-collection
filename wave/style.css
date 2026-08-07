@@ -1,0 +1,53 @@
+:root {
+  --bl: #98d3da;
+}
+
+body {
+  max-width: 900px;
+  min-height: 450px;
+  margin: 5em auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+
+.wave-box .wave-btn {
+  position: relative;
+  padding: 1em;
+  border: none;
+  font-size: 1em;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  background-color: var(--bl);
+  cursor: pointer;
+}
+
+.wave-box .wave-btn::after,
+.wave-box .wave-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border: 1px solid var(--bl);
+  width: 6.5em;
+  height: 6.5em;
+  border-radius: 50%;
+  animation: wave-btn-animation 2s linear infinite;
+}
+
+.wave-box .wave-btn::after {
+  animation-delay: .6s;
+}
+
+@keyframes wave-btn-animation {
+  0% {
+    scale: .6;
+  }
+  100% {
+    scale: 1.2;
+    opacity: 0;
+  }
+}
